@@ -44,9 +44,16 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion = "1.4.4"
     }
-    packagingOptions {
+    packaging {
         resources.excludes.add("META-INF/{AL2.0,LGPL2.1}")
     }
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_11.majorVersion
+    }
+}
+
+kotlin {
+    jvmToolchain(11)
 }
 
 dependencies {
