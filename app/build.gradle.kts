@@ -5,7 +5,7 @@ plugins {
     id("dagger.hilt.android.plugin")
 }
 
-var composeVersion: String = "1.4.2"
+var composeVersion: String = "1.4.3"
 
 @Suppress("UnstableApiUsage")
 android {
@@ -42,7 +42,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.4.4"
+        kotlinCompilerExtensionVersion = "1.4.8"
     }
     packaging {
         resources.excludes.add("META-INF/{AL2.0,LGPL2.1}")
@@ -59,25 +59,25 @@ kotlin {
 dependencies {
     implementation(project(":player-service"))
 
-    implementation("androidx.core:core-ktx:1.10.0")
+    implementation("androidx.core:core-ktx:1.10.1")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.1")
 
     // Compose
-    implementation("androidx.activity:activity-compose:1.7.1")
+    implementation("androidx.activity:activity-compose:1.7.2")
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.1")
     implementation("androidx.lifecycle:lifecycle-runtime-compose:2.6.1")
-    implementation("androidx.compose.ui:ui:1.4.2")
+    implementation("androidx.compose.ui:ui:$composeVersion")
     implementation("androidx.compose.ui:ui-tooling-preview:$composeVersion")
-    implementation("androidx.compose.material3:material3:1.1.0-rc01")
-    implementation("androidx.navigation:navigation-compose:2.5.3")
+    implementation("androidx.compose.material3:material3:1.1.1")
+    implementation("androidx.navigation:navigation-compose:2.6.0")
     implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
 
     // Hilt
-    implementation("com.google.dagger:hilt-android:2.45")
-    kapt("com.google.dagger:hilt-compiler:2.45")
+    implementation("com.google.dagger:hilt-android:2.46.1")
+    kapt("com.google.dagger:hilt-compiler:2.46.1")
 
     // Media3
-    implementation("androidx.media3:media3-session:1.0.1")
+    implementation("androidx.media3:media3-session:1.1.0")
 
     // Coil
     implementation("io.coil-kt:coil-compose:2.3.0")
